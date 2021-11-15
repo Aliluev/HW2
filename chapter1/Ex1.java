@@ -1,9 +1,14 @@
 package chapter1;
 
 public class Ex1 {
+
+    public static void main(String[] args) {
+        int x = 300;
+        Ex1 ex1 = new Ex1(x);
+        System.out.println(ex1.toString());
+    }
+
     private int number;
-
-
 
     public Ex1(int number) {
         this.number=number;
@@ -22,6 +27,8 @@ public class Ex1 {
    public String getHexadecimal(){
        String hexadecimal=Integer.toHexString(number);
        return hexadecimal;
+
+
     }
 
 
