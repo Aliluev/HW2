@@ -25,7 +25,7 @@ public class Ex13 {
         }
         System.out.println(list.toString());
 
-        System.out.println("Введите номера ");
+        System.out.println("Введите номера list которые хотите удалить(6)");
         Scanner sc = new Scanner(System.in);
         for(int i=0;i<6;i++){
             int index1 = sc.nextInt();
