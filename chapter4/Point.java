@@ -1,7 +1,7 @@
 package chapter4;
 import java.util.Objects;
 
-public class Point {
+public class Point implements Cloneable {
 
         protected double x, y;
 
@@ -18,4 +18,8 @@ public class Point {
             return y;
         }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
+}

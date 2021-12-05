@@ -24,9 +24,10 @@ public class Ex4and5 {
         Line line=new Line(new Point(3,3),new Point(4,4));
         line.moveBy(2,2);
         System.out.println(line.toString());
+
     }
 
-    public static class Circle extends Shape {
+    public static class Circle extends Shape implements Cloneable {
         private int radius;
 
         public Circle(Point point, int radius) {
@@ -43,7 +44,7 @@ public class Ex4and5 {
         protected Circle clone() {
             try {
                 Circle cloned = (Circle) super.clone();
-                cloned.point = new Point(point.getX(), point.getY());
+                cloned.point = (Point) point.clone();
                 return cloned;
             } catch (CloneNotSupportedException e) {
                 return null;
@@ -56,7 +57,7 @@ public class Ex4and5 {
         }
     }
 
-   public static class Rectangle extends Shape {
+   public static class Rectangle extends Shape implements Cloneable {
        private double width;
        private double height;
 
@@ -76,7 +77,7 @@ public class Ex4and5 {
        protected Rectangle clone() {
            try {
                Rectangle cloned = (Rectangle) super.clone();
-               cloned.point = new Point(point.getX(), point.getY());
+               cloned.point= (Point) point.clone();
                return cloned;
            } catch (CloneNotSupportedException e) {
                return null;
@@ -91,7 +92,7 @@ public class Ex4and5 {
 
    }
 
-       public static class Line extends Shape {
+       public static class Line extends Shape implements Cloneable{
            private Point from;
            private Point to;
 
@@ -118,9 +119,9 @@ public class Ex4and5 {
            protected Line clone() {
                try {
                    Line cloned = (Line) super.clone();
-                   cloned.point = new Point(point.getX(), point.getY());
-                   cloned.from = new Point(from.getX(), from.getY());
-                   cloned.to = new Point(to.getX(), to.getY());
+                   cloned.point =(Point) point.clone();
+                   cloned.from =(Point) from.clone();
+                   cloned.to =(Point) to.clone();
                    return cloned;
                } catch (CloneNotSupportedException e) {
                    return null;
